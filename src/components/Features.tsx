@@ -29,7 +29,7 @@ export function Features() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      if (cardsRef.current) {
+      if (cardsRef.current && cardsRef.current.children.length > 0) {
         gsap.from(cardsRef.current.children, {
           y: 60,
           opacity: 0,
@@ -38,7 +38,9 @@ export function Features() {
           ease: 'power3.out',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 70%',
+            start: 'top 85%',
+            toggleActions: 'play none none reverse',
+            invalidateOnRefresh: true,
           },
         });
       }

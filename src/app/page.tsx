@@ -31,7 +31,7 @@ const Footer = dynamic(
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-[#0d0d0d] text-white overflow-hidden">
+    <main className="relative min-h-screen bg-[#0d0d0d] text-white">
       <Nav />
       <Hero />
       <Features />

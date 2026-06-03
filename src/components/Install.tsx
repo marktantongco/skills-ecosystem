@@ -13,7 +13,7 @@ export function Install() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const steps = sectionRef.current?.querySelectorAll('.install-step');
-      if (!steps) return;
+      if (!steps || steps.length === 0) return;
       gsap.from(steps, {
         y: 40,
         opacity: 0,
@@ -22,7 +22,9 @@ export function Install() {
         ease: 'power3.out',
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 70%',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+          invalidateOnRefresh: true,
         },
       });
     }, sectionRef);

@@ -11,7 +11,7 @@ const nextConfig = {
   images: { unoptimized: true },
   trailingSlash: true,
   // For GitHub Pages deployment at /skills-ecosystem/
-  basePath: process.env.NODE_ENV === 'production' ? '/skills-ecosystem' : '',
+  basePath: process.env.VERCEL ? '' : (process.env.NODE_ENV === 'production' ? '/skills-ecosystem' : ''),
 };
 
 module.exports = withPWA(nextConfig);

@@ -1,3 +1,5 @@
+'use client';
+
 import { Github, ArrowUpRight } from 'lucide-react';
 
 export function Footer() {

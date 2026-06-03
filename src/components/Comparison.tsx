@@ -16,6 +16,7 @@ export function Comparison() {
     const ctx = gsap.context(() => {
       if (tableRef.current) {
         const rows = tableRef.current.querySelectorAll('tbody tr');
+        if (rows.length === 0) return;
         gsap.from(rows, {
           x: -30,
           opacity: 0,
@@ -24,7 +25,9 @@ export function Comparison() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 65%',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+            invalidateOnRefresh: true,
           },
         });
       }

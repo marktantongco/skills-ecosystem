@@ -53,7 +53,7 @@ export function DeploySection() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const cards = sectionRef.current?.querySelectorAll('.deploy-card');
-      if (!cards) return;
+      if (!cards || cards.length === 0) return;
       gsap.from(cards, {
         y: 50,
         opacity: 0,
@@ -62,7 +62,9 @@ export function DeploySection() {
         ease: 'power3.out',
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 65%',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+          invalidateOnRefresh: true,
         },
       });
     }, sectionRef);
